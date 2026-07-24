@@ -1,0 +1,24 @@
+import random
+
+pos_model = {
+    "I": ["PRON"],
+    "like": ["VERB"],
+    "Python": ["NOUN"],
+    "is": ["VERB"],
+    "a": ["DET"],
+    "powerful": ["ADJ"],
+    "language": ["NOUN"]
+}
+
+sentence = input("Enter a sentence: ")
+
+words = sentence.split()
+
+print("\nPOS Tags:")
+
+for word in words:
+    if word in pos_model:
+        tag = random.choice(pos_model[word])
+    else:
+        tag = "UNKNOWN"
+    print(word, ":", tag)
