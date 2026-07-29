@@ -1,0 +1,20 @@
+# Read the dataset
+with open("dataset.txt", "r") as file:
+    text = file.read().lower()
+
+# Split into words
+words = text.split()
+
+# Count word frequencies
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+# Display frequencies
+print("Word Frequencies:")
+for word, count in word_count.items():
+    print(word, ":", count)
