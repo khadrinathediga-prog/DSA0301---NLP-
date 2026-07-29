@@ -1,0 +1,27 @@
+# Read the dataset
+with open("dataset.txt", "r") as file:
+    text = file.read().lower()
+
+# Split into words
+words = text.split()
+
+# Count frequencies
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+# Find the most frequent word
+max_word = ""
+max_count = 0
+
+for word, count in word_count.items():
+    if count > max_count:
+        max_word = word
+        max_count = count
+
+print("Most Frequent Word:", max_word)
+print("Frequency:", max_count)
